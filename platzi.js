@@ -33,11 +33,11 @@ vaca.imagen = new Image();
 vaca.imagen.src=vaca.url;
 vaca.imagen.addEventListener("load",cargarVaca);
 
-cerdo.imagen =new Image();
+cerdo.imagen = new Image();
 cerdo.imagen.src=cerdo.url;
 cerdo.imagen.addEventListener("load",cargarCerdo);
 
-pollo.imagen= new Image();
+pollo.imagen = new Image();
 pollo.imagen.src=pollo.url;
 pollo.imagen.addEventListener("load",cargarPollo);
 
@@ -51,23 +51,38 @@ function cargarMapa()
 
 function cargarVaca()
 {
-	fondo.cargaOK = true;
+	vaca.cargaOK = true;
+	dibujar(); //para dibujar despues de cargar
 }
 
 function cargarCerdo()
 {
-	fondo.cargaOK = true;
+	cerdo.cargaOK = true;
+	dibujar(); //para dibujar despues de cargar
 }
 
 function cargarPollo()
 {
-	fondo.cargaOK = true;
+	pollo.cargaOK = true;
+	dibujar(); //para dibujar despues de cargar
 }
 
 function dibujar()
 {
-	if (fondo.cargaOK == true) 
+	if (fondo.cargaOK) //se quito == true porque igual funciona
 	{
 		papel.drawImage(fondo.imagen,0,0);
+	}
+	if (vaca.cargaOK) //se quito == true porque igual funciona
+	{
+		papel.drawImage(vaca.imagen,50,50);
+	}
+	if (cerdo.cargaOK) //se quito == true porque igual funciona
+	{
+		papel.drawImage(cerdo.imagen,100,100);
+	}
+	if (pollo.cargaOK) //se quito == true porque igual funciona
+	{
+		papel.drawImage(pollo.imagen,300,300);
 	}
 }
