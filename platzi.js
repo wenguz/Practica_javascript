@@ -26,3 +26,18 @@ function dibujarMapa()
 	//agregar imagen al papel
 	papel.drawImage(fondo,0,0); //objeto, coordenadas donde incia
 }
+
+function dibujarVaca()
+{
+	papel.drawImage(vaca,10,10);
+}
+
+function dibujarCerdo()
+{
+	papel.drawImage(cerdo,20,20);
+}
+
+function dibujarPollo()
+{
+	papel.drawImage(pollo,30,30);
+}
