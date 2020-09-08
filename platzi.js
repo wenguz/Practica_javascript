@@ -82,8 +82,10 @@ function dibujar()
 		for(v=0 ; v<cantidad ;v ++)
 		{
 			//coordenadas para dibujar en diferentes lugares
-			var x = aleatorio(0,420);// 420 resulta de restar tamaños: 500(total_fondo) - 80(total_vaca)
-			var y = aleatorio(0,420);
+			var x = aleatorio(0,6);// el segundo numero de rango resulta de restar tamaños: 500(total_fondo) - 80(total_vaca)
+			var y = aleatorio(0,6);
+			x= x * 60; //para que la imagen no se sobreponga con otra del mismo tipo
+			y= y* 60;
 			//dibuja una imagene en las coordenadas indicadas
 			papel.drawImage(vaca.imagen,x,y);
 		}
