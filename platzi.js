@@ -22,6 +22,8 @@ var pollo = {
 	cargaOK: false
 };
 
+//controla la cantidad de imagenes que cargara de un mismo tipo
+var cantidad = aleatorio(0,10);
 //llamar al Objeto para crear imagen de fondo
 fondo.imagen =  new Image(); //instancia de una clase
 //carga la fuente de la imagen fondo
@@ -76,10 +78,15 @@ function dibujar()
 	}
 	if (vaca.cargaOK) //se quito == true porque igual funciona
 	{
-		//coordenadas para dibujar en diferentes lugares
-		var x = aleatorio(0,420);
-		var y = aleatorio(0,420);
-		papel.drawImage(vaca.imagen,x,y);
+		//dibujar v vacas
+		for(v=0 ; v<cantidad ;v ++)
+		{
+			//coordenadas para dibujar en diferentes lugares
+			var x = aleatorio(0,420);// 420 resulta de restar tamaños: 500(total_fondo) - 80(total_vaca)
+			var y = aleatorio(0,420);
+			//dibuja una imagene en las coordenadas indicadas
+			papel.drawImage(vaca.imagen,x,y);
+		}
 	}
 	if (cerdo.cargaOK) //se quito == true porque igual funciona
 	{
