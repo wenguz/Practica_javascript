@@ -1,43 +1,73 @@
 var vp=document.getElementById("villaplatzi"); //llamar al id creado en .html
 var papel = vp.getContext("2d"); //donde se dibujara
 
-//Objeto para crear imagen de fondo
-var fondo =  new Image(); //instancia de una clase
+//objeto con varios atributos
+var fondo= {
+	url: "tile.png",
+	cargaOK: false
+};
+
+var vaca = {
+	url: "vaca.png",
+	cargaOK: false
+};
+
+var cerdo = {
+	url: "cerdo.png",
+	cargaOK: false
+};
+
+var pollo = {
+	url: "pollo.png",
+	cargaOK: false
+};
+
+//llamar al Objeto para crear imagen de fondo
+fondo.imagen =  new Image(); //instancia de una clase
 //carga la fuente de la imagen fondo
-fondo.src= "tile.png";
+fondo.imagen.src= fondo.url;
 //evento que permitira dibujar el mapa/fondo
-fondo.addEventListener("load",dibujarMapa);
+fondo.imagen.addEventListener("load",cargarMapa);
 
-var vaca = new Image();
-vaca.src="vaca.png";
-vaca.addEventListener("load",dibujarVaca);
+vaca.imagen = new Image();
+vaca.imagen.src=vaca.url;
+vaca.imagen.addEventListener("load",cargarVaca);
 
-var cerdo =new Image();
-cerdo.src="cerdo.png";
-cerdo.addEventListener("load",dibujarCerdo);
+cerdo.imagen =new Image();
+cerdo.imagen.src=cerdo.url;
+cerdo.imagen.addEventListener("load",cargarCerdo);
 
-var pollo= new Image();
-pollo.src="pollo.png";
-pollo.addEventListener("load",dibujarPollo);
+pollo.imagen= new Image();
+pollo.imagen.src=pollo.url;
+pollo.imagen.addEventListener("load",cargarPollo);
 
 
-function dibujarMapa()
+//funciones para cargar las imagenes antes de dibujar
+function cargarMapa()
 {
-	//agregar imagen al papel
-	papel.drawImage(fondo,0,0); //objeto, coordenadas donde incia
+	fondo.cargaOK = true;
+	dibujar(); //para dibujar despues de cargar
 }
 
-function dibujarVaca()
+function cargarVaca()
 {
-	papel.drawImage(vaca,10,10);
+	fondo.cargaOK = true;
 }
 
-function dibujarCerdo()
+function cargarCerdo()
 {
-	papel.drawImage(cerdo,20,20);
+	fondo.cargaOK = true;
 }
 
-function dibujarPollo()
+function cargarPollo()
 {
-	papel.drawImage(pollo,30,30);
+	fondo.cargaOK = true;
+}
+
+function dibujar()
+{
+	if (fondo.cargaOK == true) 
+	{
+		papel.drawImage(fondo.imagen,0,0);
+	}
 }
