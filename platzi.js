@@ -131,23 +131,23 @@ function dibujarTeclado(evento)
 			case teclas.LEFT:
 				console.log("Izquierda");
 				x_c = x_c - movimiento;
-				dibujar(x_c,y_c);
+				dibujar();
 
 			break;
 			case teclas.UP:
 				console.log("arriba");
 				 y_c = y_c - movimiento;
-				 dibujar(x_c,y_c);
+				 dibujar();
 			break;
 			case teclas.RIGHT:
 				console.log("derecha");
 				x_c=x_c + movimiento;
-				dibujar(x_c,y_c);
+				dibujar();
 			break;
 			case teclas.DOWN:
 				console.log("abajo");
 				y_c = y_c + movimiento;
-				dibujar(x_c,y_c);
+				dibujar();
 			break;
 			default:
 				console.log("Otra tecla");
