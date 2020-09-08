@@ -1,6 +1,5 @@
 var vp=document.getElementById("villaplatzi"); //llamar al id creado en .html
 var papel = vp.getContext("2d"); //donde se dibujara
-
 //objeto con varios atributos
 var fondo= {
 	url: "tile.png",
@@ -130,23 +129,22 @@ function dibujarTeclado(evento)
 		switch(evento.keyCode){
 			case teclas.LEFT:
 				console.log("Izquierda");
-				x_c = x_c - movimiento;
+					x_c = x_c - movimiento;
 				dibujar();
-
 			break;
 			case teclas.UP:
 				console.log("arriba");
-				 y_c = y_c - movimiento;
-				 dibujar();
+					y_c = y_c - movimiento;
+				dibujar();
 			break;
 			case teclas.RIGHT:
 				console.log("derecha");
-				x_c=x_c + movimiento;
+					x_c=x_c + movimiento;
 				dibujar();
 			break;
 			case teclas.DOWN:
 				console.log("abajo");
-				y_c = y_c + movimiento;
+					y_c = y_c + movimiento;
 				dibujar();
 			break;
 			default:
