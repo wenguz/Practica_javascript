@@ -76,7 +76,10 @@ function dibujar()
 	}
 	if (vaca.cargaOK) //se quito == true porque igual funciona
 	{
-		papel.drawImage(vaca.imagen,50,50);
+		//coordenadas para dibujar en diferentes lugares
+		var x = aleatorio(0,420);
+		var y = aleatorio(0,420);
+		papel.drawImage(vaca.imagen,x,y);
 	}
 	if (cerdo.cargaOK) //se quito == true porque igual funciona
 	{
@@ -86,4 +89,12 @@ function dibujar()
 	{
 		papel.drawImage(pollo.imagen,300,300);
 	}
+}
+
+function aleatorio(min,max)
+{
+	//funcion que genera numeros aleatorios entre dos valores.
+	var resultado;
+	resultado = Math.floor(Math.random() * (max - min + 1)) + min;
+	return resultado;
 }
