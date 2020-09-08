@@ -4,7 +4,7 @@ var papel = vp.getContext("2d"); //donde se dibujara
 //objeto con varios atributos
 var fondo= {
 	url: "tile.png",
-	cargaOK: false
+	cargaOK: false  //para verificar el cargado de imagen y que no se sobrepongan
 };
 
 var vaca = {
@@ -67,6 +67,7 @@ function cargarPollo()
 	dibujar(); //para dibujar despues de cargar
 }
 
+//funcion para dibujar todo y mostrar por pantalla
 function dibujar()
 {
 	if (fondo.cargaOK) //se quito == true porque igual funciona
