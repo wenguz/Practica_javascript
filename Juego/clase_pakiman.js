@@ -22,7 +22,7 @@ class Pakiman
 	/*Funcion mostrar informacion de la instancia*/
 	mostrar()
 	{
-		document.body.appendChild(this.imagen);
+		document.body.appendChild(this.imagen); /*esta funion agrega la imagen en pantalla*/
 		document.write("<p>");
 		document.write("<br><strong>"+this.nombre+"</strong><br>");
 		document.write("Vida: "+this.vida + "<br>");
