@@ -7,6 +7,14 @@ class Billete
 	}
 }
 
+function entregarDinero()
+{
+	for(var bi of caja)
+	{
+		console.log(bi);
+	}
+}
+
 var caja = [];
 caja.push(new Billete(50,3));
 caja.push(new Billete(20,2));
@@ -18,3 +26,7 @@ var dinero = 210;
 var entregado = [];
 var div = 0;
 var papeles = 0;
+
+var b = document.getElementById("extraer");
+b.addEventListener("click",entregarDinero);
+
