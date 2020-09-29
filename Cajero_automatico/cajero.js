@@ -10,6 +10,10 @@ class Billete
 //funcion al ejecutar el boton
 function entregarDinero()
 {
+	//extraer el valor de caja de html
+	var t = document.getElementById("dinero");
+	//convierte el texto a entero
+	dinero = parseInt(t.value);
 	//lee la cantidad de billetes en caja
 	for(var bi of caja)
 	{
@@ -29,11 +33,17 @@ function entregarDinero()
 			dinero = dinero - (bi.valor * papeles); 
 		}
 	}
+	//si el monto solicitado es mayor al que se tiene en caja
 	if (dinero > 0)
 	{
-		console.log("No tengo mas");
+		document.write("No tengo mas");
 	}
-	console.log(entregado);
+	else{
+		for (var e of entregado){
+			document.write(e.cantidad + " billetes de $ " + e.valor + "</br>");
+		}
+	}
+	
 }
 
 var caja = [];
@@ -42,7 +52,7 @@ caja.push(new Billete(20,30));
 caja.push(new Billete(20,30));
 
 //valor que sera sustituido por caja de html
-var dinero = 1000;
+var dinero = 0;
 
 var entregado = [];
 var div = 0;
