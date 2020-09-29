@@ -36,11 +36,15 @@ function entregarDinero()
 	//si el monto solicitado es mayor al que se tiene en caja
 	if (dinero > 0)
 	{
-		document.write("No tengo mas");
+		//document.write("No tengo mas");
+		resultado.innerHTML = "No tengo mas";
 	}
 	else{
 		for (var e of entregado){
-			document.write(e.cantidad + " billetes de $ " + e.valor + "</br>");
+			//solo mostrara los billetes entregados
+			if (e.cantidad > 0) {
+				resultado.innerHTML = resultado.innerHTML + e.cantidad + " billetes de $ " + e.valor + "</br>";
+			}
 		}
 	}
 	
@@ -58,6 +62,8 @@ var entregado = [];
 var div = 0;
 var papeles = 0;
 
+//variable para obtener el resultado que se muestra en pantall
+var resultado = document.getElementById("resultado");
 //llamar al boton de html
 var b = document.getElementById("extraer");
 b.addEventListener("click",entregarDinero);
